@@ -1,6 +1,9 @@
 package com.example.hellocampus;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         getSupportActionBar().setTitle("ID: 20102827");
+        Button myButton = findViewById(R.id.Change);
+        final TextView myText = findViewById(R.id.Department);
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myText.setText("Ms. Angie Ceniza");
+            }
+        });
     }
 }
