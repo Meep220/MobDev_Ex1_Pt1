@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.hellocampus"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.hellocampus"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -32,11 +32,12 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.activity:activity:1.9.3")
+    implementation("androidx.core:core-ktx:1.15.0")
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.support.annotations)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

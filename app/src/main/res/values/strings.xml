@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hello Campus</string>
+    <string name="Department">Computer Science</string>
+    <string name="Chairwoman">Ms. Angie Ceniza</string>
+    <string name="Prompt">Press me!</string>
+    <string name="Labeling">Department</string>
 </resources>
