@@ -1,0 +1,1 @@
+The reason the crash happens when placing the sabotage code is because the textview value points to null and the code then tells the application to set the text String to Zero even though it is not pointing to anything which results into the application crashing. 
