@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     int Count_Val = 0;
-    TextView Counter = findViewById(R.id.Counter);
+    TextView Counter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         Button AddCounter = findViewById(R.id.button);
+        Counter = findViewById(R.id.Counter);
         Counter.setText(String.valueOf(Count_Val));
 
         AddCounter.setOnClickListener(new View.OnClickListener() {
@@ -37,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // Sabotage Code
-        TextView counterDisplay = null;
-        counterDisplay.setText("0");
-
+//        Counter = null;
+//        Counter.setText("0");
     }
-    protected void onSavedInstanceState(Bundle outState){
+
+    protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
         outState.putInt("Counter_Val", Count_Val);
     }

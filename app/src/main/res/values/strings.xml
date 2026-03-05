@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Counter</string>
+    <integer name="Counter">0</integer>
     <string name="Button">Add</string>
 </resources>
