@@ -9,20 +9,20 @@
 
     <TextView
         android:id="@+id/Counter"
-        android:layout_width="13dp"
-        android:layout_height="24dp"
-        android:text="@integer/Counter"
+        android:layout_width="105dp"
+        android:layout_height="81dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.321" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="@string/Button"
         tools:layout_editor_absoluteX="159dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
