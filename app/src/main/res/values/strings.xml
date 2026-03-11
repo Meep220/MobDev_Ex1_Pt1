@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Exercise2_Part1</string>
+    <string name="Logo_Desc">University Logo</string>
+    <string name="Profile_Desc">Profile Picture</string>
+    <string name="id_Number">ID: 20102827</string>
+    <string name="Name">Joselito L. Yap jr.</string>
+    <string name="Department">BS Computer Science</string>
 </resources>
