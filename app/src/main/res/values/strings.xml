@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Exercise02_Part2</string>
+    <string name="Button">Submit</string>
+    <string name="Before">Enter Credentials</string>
+    <string name="Result">Login Successful</string>
+    <string name="Failed">Please Try Again</string>
 </resources>

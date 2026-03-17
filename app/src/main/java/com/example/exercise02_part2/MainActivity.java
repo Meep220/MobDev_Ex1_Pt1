@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
         String StudID = binding.SchoolId.getText().toString();
         String Pass = binding.Password.getText().toString();
 
-
+        if(StudID.equals("20102827") && Pass.equals("brown27")){
+            binding.Result.setText(getString(R.string.Result));
+        }else{
+            binding.Result.setText(getString(R.string.Failed));
+        }
 
     }
 
