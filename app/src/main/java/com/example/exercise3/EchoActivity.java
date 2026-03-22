@@ -21,6 +21,15 @@ public class EchoActivity extends AppCompatActivity {
 
         Log.d(TAG,"Successfully Started onCreate Method for Echo Activity");
 
+
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.echo_activity);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
         Intent RecievedIntent = getIntent();
         String RecievedMessage = RecievedIntent.getStringExtra("Message");
         TextView Echo = findViewById(R.id.EchoText);
@@ -31,13 +40,5 @@ public class EchoActivity extends AppCompatActivity {
         }else{
             Log.w(TAG,"Text Not Recieved");
         }
-
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.echo_activity);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }
