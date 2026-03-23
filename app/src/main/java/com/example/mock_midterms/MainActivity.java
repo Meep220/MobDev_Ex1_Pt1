@@ -26,5 +26,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        Integer OpA;
+        Integer OpB;
+
+        Binding.
+
     }
 }
