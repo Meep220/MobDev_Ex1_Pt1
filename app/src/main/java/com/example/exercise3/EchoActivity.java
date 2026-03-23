@@ -34,6 +34,7 @@ public class EchoActivity extends AppCompatActivity {
         String RecievedMessage = RecievedIntent.getStringExtra("Message");
         TextView Echo = findViewById(R.id.EchoText);
 
+
         if(RecievedMessage != null){
             Log.d(TAG, "Successfully Recieved Message");
             Echo.setText(RecievedMessage);

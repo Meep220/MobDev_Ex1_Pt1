@@ -1,6 +1,7 @@
 package com.example.exercise3;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         });
         Button Send = findViewById(R.id.button);
         EditText Message = findViewById(R.id.MessageText);
+        Button SMS = findViewById(R.id.SMS);
+
         Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
                 String EchoMessage = Message.getText().toString();
                 NewIntent.putExtra("Message",EchoMessage);
                 startActivity(NewIntent);
+            }
+        });
+        SMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG,"Sending SMS Message");
+                Intent NewIntent = new Intent(Intent.ACTION_SEND);
+                String EchoMessage = Message.getText().toString();
+                NewIntent.putExtra(Intent.EXTRA_TEXT,EchoMessage);
+                NewIntent.setType("text/plain");
+                Intent SMSIntent = Intent.createChooser(NewIntent, null);
+                startActivity(SMSIntent);
             }
         });
 
