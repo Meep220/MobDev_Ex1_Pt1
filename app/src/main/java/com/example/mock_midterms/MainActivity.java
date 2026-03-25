@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -40,17 +41,27 @@ public class MainActivity extends AppCompatActivity {
             Result = OpA * OpB;
             Log.d(TAG,"Result is :" + Result);
         } else if (Operator.equals("/")) {
+            // Division
             Log.d(TAG,"Performing Division Operation");
             if(OpB == 0){
+                // Toast to prompt divide by zero
                 Toast.makeText(this,"Cannot Divide by Zero",Toast.LENGTH_SHORT).show();
             }else{
                 Result = OpA / OpB;
             }
             Log.d(TAG,"Result is :" + Result);
+        } else if (Operator.equals("ID")) {
+            // Custom Operator
+            Log.d(TAG, "Performing Custom Operation");
+            float ID_1 = 8;
+            float ID_2 = 2;
+            float ID_3 = 7;
+            Result = ((OpA + ID_1) * ID_2) / ID_3;
+        }else{
+            return Result;
         }
         return Result;
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(Binding.Input.getText().equals("")){
-                    return;
+                    return;  
                 }else {
                     Log.d(TAG, "Successfully Started Division Method");
                     OpA = (Binding.Input.getText() == "") ? 0 : Float.parseFloat(Binding.Input.getText().toString());
@@ -144,16 +155,18 @@ public class MainActivity extends AppCompatActivity {
         Binding.equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Binding.Input.getText().equals("")){
+                if(Binding.Input.getText().toString().isEmpty()){
                     return;
-                }else{
+                }
+                if(Operator == null){
+                    // Prevents App From Crashing if Enter is pressed after an input without an operator
+                    return;
+                }
                     OpB = (Binding.Input.getText() == "")? 0 :Float.parseFloat(Binding.Input.getText().toString());
                     Binding.Equation.append(Binding.Input.getText().toString());
                     Binding.Equation.append(" = ");
                     float CalculatedResult = Calculate();
                     Binding.Input.setText(String.format("%s", CalculatedResult));
-                }
-
             }
         });
         Binding.AC.setOnClickListener(new View.OnClickListener() {
@@ -167,12 +180,45 @@ public class MainActivity extends AppCompatActivity {
                 Binding.Input.setText("");
             }
         });
-
-
-
+        Binding.ID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Binding.Input.getText().equals("")){
+                    return;
+                }else {
+                    Log.d(TAG, "Successfully Started Division Method");
+                    OpA = (Binding.Input.getText() == "") ? 0 : Float.parseFloat(Binding.Input.getText().toString());
+                    Operator = "ID";
+                    Log.d(TAG, "Successfully Assigned Float Value:" + OpA);
+                    float CustomResult = Calculate();
+                    Binding.Equation.append(Binding.Input.getText().toString());
+                    Binding.Input.setText(String.format("%s",CustomResult));
+                }
+            }
+        });
 
 
 
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putFloat("Operand_A",OpA);
+        outState.putFloat("Operand_B",OpB);
+        outState.putString("Operator_Sign",Operator);
+        outState.putString("Equation",Binding.Equation.getText().toString());
+        outState.putString("Input",Binding.Input.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        OpA = savedInstanceState.getFloat("Operand_A");
+        OpB = savedInstanceState.getFloat("Operand_B");
+        Operator = savedInstanceState.getString("Operator_Sign");
+        Binding.Equation.setText(savedInstanceState.getString("Equation"));
+        Binding.Input.setText(savedInstanceState.getString("Input"));
+
+    }
 }
