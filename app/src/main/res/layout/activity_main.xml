@@ -24,7 +24,8 @@
             android:id="@+id/Equation"
             android:layout_width="412dp"
             android:layout_height="95dp"
-            android:text="Hello"
+            android:textColor="@color/Text_Color"
+            android:textSize="24sp"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/Calculator_Screen" />
@@ -33,7 +34,8 @@
             android:id="@+id/Input"
             android:layout_width="412dp"
             android:layout_height="95dp"
-            android:text="Hello"
+            android:textColor="@color/Text_Color"
+            android:textSize="24sp"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/Equation" />
@@ -53,6 +55,7 @@
         tools:layout_editor_absoluteY="190dp">
 
         <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/numpad"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"
@@ -320,7 +323,7 @@
                 app:strokeColor="@color/Button_TextColor" />
 
             <Button
-                android:id="@+id/Num_0"
+                android:id="@+id/num_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -358,6 +361,44 @@
                 app:layout_row="1"
                 app:rippleColor="@color/Button_TextColor"
                 app:strokeColor="@color/Button_TextColor" />
+
+            <Button
+                android:id="@+id/ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/Button_Color"
+                android:text="@string/ID"
+                android:textColor="@color/Button_TextColor"
+                app:iconTint="@color/Button_TextColor"
+                app:layout_column="3"
+                app:layout_row="2"
+                app:rippleColor="@color/Button_TextColor"
+                app:strokeColor="@color/Button_TextColor"/>
+
+            <Button
+                android:id="@+id/AC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/Button_Color"
+                android:text="@string/AC"
+                android:textColor="@color/Button_TextColor"
+                app:iconTint="@color/Button_TextColor"
+                app:layout_column="3"
+                app:layout_row="3" />
         </androidx.gridlayout.widget.GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

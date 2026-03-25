@@ -15,4 +15,6 @@
     <string name="Division">/</string>
     <string name="num0">0</string>
     <string name="Calculate">=</string>
+    <string name="ID">ID</string>
+    <string name="AC">AC</string>
 </resources>
