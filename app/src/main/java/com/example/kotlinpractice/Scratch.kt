@@ -12,6 +12,10 @@ fun main(){
     println(nickname?.length)
 
     print(greetUser(name))
+
+    for (i in 1..5){
+        println(i)
+    }
 }
 
 fun greetUser(name: String): String{
