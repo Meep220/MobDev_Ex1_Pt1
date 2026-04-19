@@ -24,6 +24,24 @@ class CalculatorActivity : AppCompatActivity() {
     fun addNumbers(a: Double, b:Double): Double{
         return a + b
     }
+    fun subtractNumbers(a: Double, b:Double): Double{
+        return a - b
+    }
+    fun multiplyNumbers(a: Double, b:Double): Double{
+        return a * b
+    }
+    fun divideNumbers(a: Double, b:Double): Double{
+        return a / b
+    }
     val number = currentInput.toDoubleOrNull()?: (0.0)
+    fun compute(Op: String):Double{
+        when (Op) {
+            "+" -> return addNumbers(firstOperand,currentInput)
+            "-" -> return subtractNumbers(firstOperand,currentInput)
+            "*" -> return multiplyNumbers(firstOperand,currentInput)
+            "/" -> return divideNumbers(firstOperand,currentInput)
+        }
+
+    }
 
 }
