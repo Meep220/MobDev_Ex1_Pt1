@@ -20,4 +20,9 @@ class CalculatorActivity : AppCompatActivity() {
             insets
         }
     }
+
+    fun addNumbers(a: Double, b:Double): Double{
+        return a + b
+    }
+
 }
