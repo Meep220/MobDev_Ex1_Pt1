@@ -1,19 +1,19 @@
 package com.example.kotlinpractice
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class Scratch : AppCompatActivity() {
+fun main(){
     val name = ("Joselito")
     var Age = (22)
     Age = Age + 1
+    var nickname: String? = null
+    println(nickname?.length)
 
-    print(name + Age)
+    nickname = ("Jose")
+    println(nickname?.length)
 
-    fun greetUser(name: String): String{
-        return ("Welcome, " + name)
-    }
+    print(greetUser(name))
+}
+
+fun greetUser(name: String): String{
+    return ("Welcome, " + name)
 }
