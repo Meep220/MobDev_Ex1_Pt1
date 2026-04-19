@@ -24,5 +24,6 @@ class CalculatorActivity : AppCompatActivity() {
     fun addNumbers(a: Double, b:Double): Double{
         return a + b
     }
+    val number = currentInput.toDoubleOrNull()?: (0.0)
 
 }
