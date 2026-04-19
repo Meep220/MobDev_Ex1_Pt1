@@ -11,10 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinPractice">
-        <activity
-            android:name=".Scratch"
-            android:exported="false" />
-        <activity android:name=".CalculatorActivity" />
+        <activity android:name=".CalculatorActivity" android:exported="true">
+
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
